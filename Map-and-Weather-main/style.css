@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes init{
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+body {
+    background-color: rgb(8, 98, 24);
+    animation: init 1s ease;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    width: 75%;
+    background-color: rgb(0, 42, 3);
+    justify-content: center;
+    border: 4px solid white;
+    border-radius: 10px;
+    border-color: white;
+    font-size: 100%;
+    margin-top: 20px;
+}
+
+#texto {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 10px;
+    color: white;
+    border: solid;
+    border-radius: 20%;
+    padding: 20px;
+    background-color: rgb(0, 42, 3);
+    z-index: 1;
+}
+
+input {
+    border-radius: 10px;
+    font-size: 120%;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    padding: 5px;
+    border: 2px solid;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0%);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(100%);
+    }
+}
+
+#weather {
+    color: white;
+    border: 1px;
+    padding: 30px 10px;
+    border: solid;
+    border-radius: 20%;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 30px;
+    background-color: rgb(0, 42, 3);
+    opacity: 0;
+    display: block;
+    z-index: 1;
+}
+
+#weather.show {
+    animation: fadeIn 1s ease;
+    opacity: 1;
+}
+
+#map {
+    width: 80%;
+    height: 50%;
+    margin-top: 10px;
+    border-radius: 5%;
+    border: solid;
+    transition: transform 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes extend {
+    0% {
+        transform: scale(1);
+        box-shadow: 20px 20px 10px rgb(8, 98, 24);
+    }
+    100% {
+        transform: scale(1.15);
+        box-shadow: 20px 20px 10px rgb(0, 0, 0);
+    }
+}
+
+
+#map:hover {
+    animation: extend 1s ease;
+    transform: scale(1.15);
+    box-shadow: 20px 20px 10px rgb(0, 0, 0);
+
+    
+}
+
+/* Estilos para pantallas medianas (tabletas) */
+@media (max-width: 768px) {
+    header {
+        width: 90%;
+        font-size: 90%;
+    }
+
+    #map {
+        width: 80%;
+        height: 50%;
+    }
+
+    input {
+        font-size: 100%;
+        width: 80%;
+    }
+
+    #texto {
+        margin-top: 5%;
+        transform: none;
+    }
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    header {
+        width: 95%;
+        font-size: 80%;
+        padding: 8px;
+    }
+
+    #map {
+        width: 100%;
+        height: 250px;
+    }
+
+    input {
+        font-size: 90%;
+        width: 90%;
+    }
+
+    #texto {
+        margin-top: 5%;
+        transform: none;
+    }
+}

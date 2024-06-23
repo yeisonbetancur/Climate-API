@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaW</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Map and Weather</h1>
+    </header>
+    <div id="texto">
+        <h2>Put the desired location</h2>
+        <input id="autocomplete" type="text" placeholder="Enter Location">
+    </div>
+    <div id="map"></div>
+    <div id="weather"></div>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxlO8ILdL4GvaE8wreaAke_-k3Al4V-IM&libraries=places&callback=initMap" loading=async defer></script>
+    <script defer src="javascript.js"></script>
+</body>
+</html>
